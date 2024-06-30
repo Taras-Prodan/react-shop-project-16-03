@@ -5,11 +5,18 @@ import ReactDOM from 'react-dom/client'
 const Title = () => <h1>Hello Title Component</h1>
 
 const Content = () => (
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsum
-        eum, repudiandae assumenda quisquam saepe, laboriosam facilis magni id
-        amet voluptatibus tenetur voluptatum sequi iure!
-    </p>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsum
+            eum, repudiandae assumenda quisquam saepe, laboriosam facilis magni
+            id amet voluptatibus tenetur voluptatum sequi iure!
+        </p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+            optio?
+        </p>
+    </div>
 )
 
 const root = ReactDOM.createRoot(document.getElementById(`root`) as HTMLElement)
