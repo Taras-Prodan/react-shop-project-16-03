@@ -5,14 +5,13 @@ type HeaderProps = {
     text: string
     leftPart: string
     rightPart: string
+    numbersPart?: number
 }
 
 const Header = (props: HeaderProps) => {
     return (
         <h1>
-            {props.leftPart}
-            {props.text}
-            {props.rightPart}
+            {props.numbersPart} {props.leftPart} {props.text} {props.rightPart}
         </h1>
     )
 }
@@ -33,9 +32,24 @@ const Content = () => (
 )
 const App = () => (
     <>
-        <Header text="Title" leftPart="Hello" rightPart="Test" />
-        <Header text="App" leftPart="Hi" rightPart="Bla bla" />
-        <Header text="React" leftPart="Bye bye" rightPart="WHIWHI" />
+        <Header
+            numbersPart={1}
+            text=" Title"
+            leftPart="Hello"
+            rightPart="Test"
+        />
+        <Header
+            numbersPart={45}
+            text=" App"
+            leftPart="Hi"
+            rightPart="Bla bla"
+        />
+        <Header
+            numbersPart={12}
+            text=" React"
+            leftPart="Bye bye"
+            rightPart="WHIWHI"
+        />
         <Content />
     </>
 )
