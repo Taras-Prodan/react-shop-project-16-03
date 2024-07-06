@@ -1,59 +1,48 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
 type HeaderProps = {
     text: string
     leftPart: string
     rightPart: string
-    numbersPart?: number
+    order?: number
 }
-
+type ContentType = {
+    title: string
+    text1: string
+    text2: string
+}
 const Header = (props: HeaderProps) => {
     return (
         <h1>
-            {props.numbersPart} {props.leftPart} {props.text} {props.rightPart}
+            {props.order} {props.leftPart} {props.text} {props.rightPart}
         </h1>
     )
 }
-
-const Content = () => (
-    <React.Fragment>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ipsum
-            eum, repudiandae assumenda quisquam saepe, laboriosam facilis magni
-            id amet voluptatibus tenetur voluptatum sequi iure!
-        </p>
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-            optio?
-        </p>
-    </React.Fragment>
-)
-const App = () => (
-    <>
-        <Header
-            numbersPart={1}
-            text=" Title"
-            leftPart="Hello"
-            rightPart="Test"
-        />
-        <Header
-            numbersPart={45}
-            text=" App"
-            leftPart="Hi"
-            rightPart="Bla bla"
-        />
-        <Header
-            numbersPart={12}
-            text=" React"
-            leftPart="Bye bye"
-            rightPart="WHIWHI"
-        />
-        <Content />
-    </>
-)
-const root = ReactDOM.createRoot(document.getElementById(`root`) as HTMLElement)
+const Content = (props: ContentType) => {
+    return (
+        <>
+            <h2>{props.title}</h2>
+            <p>{props.text1}</p>
+            <p>{props.text2}</p>
+        </>
+    )
+}
+const App = () => {
+    return (
+        <>
+            <Header order={3} text="Title" leftPart="Hello" rightPart="Test" />
+            <Header text="App" leftPart="Hi" rightPart="Bla-Bla" />
+            <Header text="React" leftPart="Bye-bye" rightPart="Rainbow" />
+            <Content title="Content 1" text1="hello 1" text2="Hello 2" />
+            <Content
+                title="Content 2"
+                text1="hello 1"
+                text2="Hello 2 lorem blalb alblablbl"
+            />
+        </>
+    )
+}
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <App />
