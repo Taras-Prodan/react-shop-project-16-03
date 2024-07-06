@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-//arrow function
-const Title = () => <h1>1.Hello Title Component</h1>
-const TitleApp = () => <h1>2.Hello App Component</h1>
-const TitleReact = () => <h1>3.Hello React Component</h1>
+type HeaderProps = {
+    text: string
+}
+
+const Header = (props: HeaderProps) => {
+    console.log(props)
+    return <h1>Hello {props.text} Component</h1>
+}
 
 const Content = () => (
     <React.Fragment>
@@ -22,9 +26,9 @@ const Content = () => (
 )
 const App = () => (
     <>
-        <Title />
-        <TitleApp />
-        <TitleReact />
+        <Header text="Title" />
+        <Header text="App" />
+        <Header text="React" />
 
         <Content />
     </>
