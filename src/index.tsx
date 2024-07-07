@@ -18,20 +18,28 @@ const user = {
 }
 
 const { name, age } = user
+
 console.log(name, age)
-const Header = (props: HeaderProps) => {
+
+const Header = ({ order, leftPart, text, rightPart }: HeaderProps) => {
     return (
         <h1>
-            {props.order} {props.leftPart} {props.text} {props.rightPart}
+            {order} {leftPart} {text} {rightPart}
         </h1>
     )
 }
-const Content = (props: ContentType) => {
+
+type ContentTypes = {
+    title: string
+    text1: string
+    text2: string
+}
+const Content = ({ title, text1, text2 }: ContentTypes) => {
     return (
         <>
-            <h2>{props.title}</h2>
-            <p>{props.text1}</p>
-            <p>{props.text2}</p>
+            <h2>{title}</h2>
+            <p>{text1}</p>
+            <p>{text2}</p>
         </>
     )
 }
