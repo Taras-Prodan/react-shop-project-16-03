@@ -1,11 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-type HeaderProps = {
-    text: string
-    leftPart: string
-    rightPart: string
-    order?: number
-}
+import Header from './Header'
+import Content from './Content'
 type ContentType = {
     title: string
     text1: string
@@ -20,29 +16,6 @@ const user = {
 const { name, age } = user
 
 console.log(name, age)
-
-const Header = ({ order, leftPart, text, rightPart }: HeaderProps) => {
-    return (
-        <h1>
-            {order} {leftPart} {text} {rightPart}
-        </h1>
-    )
-}
-
-type ContentTypes = {
-    title: string
-    text1: string
-    text2: string
-}
-const Content = ({ title, text1, text2 }: ContentTypes) => {
-    return (
-        <>
-            <h2>{title}</h2>
-            <p>{text1}</p>
-            <p>{text2}</p>
-        </>
-    )
-}
 const App = () => {
     return (
         <>
