@@ -1,3 +1,5 @@
+import './Header.css'
+
 type HeaderProps = {
     text: string
     leftPart: string
@@ -16,14 +18,7 @@ const Header = ({
     color = 'white',
 }: HeaderProps) => {
     return (
-        <h1
-            style={{
-                background: background,
-                color: color,
-                fontSize: '30px',
-                padding: '20px',
-            }}
-        >
+        <h1 className="header">
             {order} {leftPart} {text} {rightPart}
         </h1>
     )
