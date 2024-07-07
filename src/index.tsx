@@ -25,14 +25,21 @@ const App = () => {
                 leftPart="Hello"
                 rightPart="Test"
                 background="aqua"
+                color="orange"
             />
             <Header
                 text="App"
                 leftPart="Hi"
                 rightPart="Bla-Bla"
                 background="green"
+                color="midnight"
             />
-            <Header text="React" leftPart="Bye-bye" rightPart="Rainbow" />
+            <Header
+                text="React"
+                leftPart="Bye-bye"
+                rightPart="Rainbow"
+                color="lightgreen"
+            />
             <Content title="Content 1" text1="hello 1" text2="Hello 2" />
             <Content
                 title="Content 2"
