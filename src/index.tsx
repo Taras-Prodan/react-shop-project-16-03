@@ -19,8 +19,19 @@ console.log(name, age)
 const App = () => {
     return (
         <>
-            <Header order={3} text="Title" leftPart="Hello" rightPart="Test" />
-            <Header text="App" leftPart="Hi" rightPart="Bla-Bla" />
+            <Header
+                order={3}
+                text="Title"
+                leftPart="Hello"
+                rightPart="Test"
+                background="aqua"
+            />
+            <Header
+                text="App"
+                leftPart="Hi"
+                rightPart="Bla-Bla"
+                background="green"
+            />
             <Header text="React" leftPart="Bye-bye" rightPart="Rainbow" />
             <Content title="Content 1" text1="hello 1" text2="Hello 2" />
             <Content
