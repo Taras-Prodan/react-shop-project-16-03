@@ -1,4 +1,4 @@
-import './Header.scss'
+import styles from './Header.module.scss'
 
 type HeaderProps = {
     text: string
@@ -18,7 +18,7 @@ const Header = ({
     color = 'white',
 }: HeaderProps) => {
     return (
-        <h1 className="header">
+        <h1 className={`${styles.header}`}>
             {order} {leftPart} {text} {rightPart}
         </h1>
     )
