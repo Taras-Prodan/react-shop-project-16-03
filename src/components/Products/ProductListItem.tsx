@@ -3,9 +3,19 @@ import './ProductListItem.css'
 
 type Props = {
     title: string
+    description: string
+    features: string
+    capacity: string
+    price: string
 }
 
-const ProductListItem = ({ title }: Props) => {
+const ProductListItem = ({
+    title,
+    description,
+    capacity,
+    price,
+    features,
+}: Props) => {
     return (
         <>
             <Typography
@@ -18,10 +28,10 @@ const ProductListItem = ({ title }: Props) => {
             <Card variant="outlined" className="product-list-item">
                 <CardContent>
                     <h3 className="product-title">{title}</h3>
-                    <p className="product-description">This is iPhone 15</p>
-                    <div className="product-features">Type: phone</div>
-                    <div className="product-features">Capacity: 64Gb</div>
-                    <div className="product-price">$ 800</div>
+                    <p className="product-description">{description}</p>
+                    <div className="product-features">Type: {features}</div>
+                    <div className="product-capacity">Capacity: {capacity}</div>
+                    <div className="product-price">{price} $</div>
                     <div className="btns-wrapper">
                         <Button variant="outlined">Add to cart</Button>
                     </div>
