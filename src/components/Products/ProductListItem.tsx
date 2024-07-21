@@ -4,9 +4,9 @@ import './ProductListItem.css'
 type Props = {
     title: string
     description: string
-    features: string
+    type: string
     capacity: string
-    price: string
+    price: number
 }
 
 const ProductListItem = ({
@@ -14,7 +14,7 @@ const ProductListItem = ({
     description,
     capacity,
     price,
-    features,
+    type,
 }: Props) => {
     return (
         <>
@@ -29,9 +29,9 @@ const ProductListItem = ({
                 <CardContent>
                     <h3 className="product-title">{title}</h3>
                     <p className="product-description">{description}</p>
-                    <div className="product-features">Type: {features}</div>
+                    <div className="product-features">Type: {type}</div>
                     <div className="product-capacity">Capacity: {capacity}</div>
-                    <div className="product-price">{price} $</div>
+                    <div className="product-price"> $ {price}</div>
                     <div className="btns-wrapper">
                         <Button variant="outlined">Add to cart</Button>
                     </div>

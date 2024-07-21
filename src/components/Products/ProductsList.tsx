@@ -1,8 +1,12 @@
 import { Grid, Typography } from '@mui/material'
 import ProductListItem from './ProductListItem'
 import './ProductListItem.css'
+import { productsArray } from 'utils/productsArray'
 
 type Props = {}
+
+console.log(productsArray)
+
 const ProductsList = (props: Props) => {
     return (
         <>
@@ -14,33 +18,17 @@ const ProductsList = (props: Props) => {
                 }}
             ></Typography>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} lg={4}>
-                    <ProductListItem
-                        title="iPad Pro"
-                        description="This is iPad Pro"
-                        features="iPad"
-                        capacity="128GB"
-                        price="999"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
-                    <ProductListItem
-                        title="iPhone 16"
-                        description="This is iPhone 16"
-                        features="phone"
-                        capacity="248GB"
-                        price="1300"
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} lg={4}>
-                    <ProductListItem
-                        title="Apple Watch"
-                        description="This is Apple Watch"
-                        features="Watch"
-                        capacity="Up to 18 hours17"
-                        price="400"
-                    />
-                </Grid>
+                {productsArray.map((product, i) => (
+                    <Grid item xs={12} sm={6} lg={4} key={i}>
+                        <ProductListItem
+                            title={product.title}
+                            description={product.description}
+                            type={product.type}
+                            capacity={product.capacity}
+                            price={product.price}
+                        />
+                    </Grid>
+                ))}
             </Grid>
         </>
     )
