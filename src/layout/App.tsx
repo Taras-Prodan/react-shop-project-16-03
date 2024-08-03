@@ -29,10 +29,22 @@ const App = () => {
         totalCount: 0,
         totalPrice: 0,
     })
+
+    const appProductToCart = (count: number, price: number) => {
+        setCartData((prevCartData) => ({
+            totalCount: prevCartData.totalCount + count,
+            totalPrice: prevCartData.totalPrice + count * price,
+        }))
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
+            <button onClick={() => appProductToCart(5, 1000)}>
+                {' '}
+                Add to cart (5, 1000$)
+            </button>
             <Main />
             <Footer />
         </StyledEngineProvider>
