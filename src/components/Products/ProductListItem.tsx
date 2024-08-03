@@ -8,7 +8,7 @@ type Props = {
     capacity: string
     price: number
     image: string
-    hide: boolean
+    count: number
 }
 
 const ProductListItem = ({
@@ -18,7 +18,6 @@ const ProductListItem = ({
     price,
     type,
     image,
-    hide,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
 
