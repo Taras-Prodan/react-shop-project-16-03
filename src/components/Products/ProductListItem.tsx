@@ -51,7 +51,11 @@ const ProductListItem = ({
                     <div className="product-capacity">Capacity: {capacity}</div>
                     <div className="product-price"> $ {price}</div>
                     <div className="product-quantity">
-                        <Button variant="outlined" onClick={onDecrementClick}>
+                        <Button
+                            variant="outlined"
+                            onClick={onDecrementClick}
+                            disabled={count <= 1}
+                        >
                             -
                         </Button>
                         <TextField size="small" value={count} />
