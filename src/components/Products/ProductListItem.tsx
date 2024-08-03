@@ -21,7 +21,6 @@ const ProductListItem = ({
     hide,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
-    const [isHideden, setinHidden] = useState<boolean>(false)
 
     const onIncrementClick = () => {
         setCount((prevCount) => prevCount + 1)
@@ -29,9 +28,6 @@ const ProductListItem = ({
 
     const onDecrementClick = () => {
         setCount((prevCount) => prevCount - 1)
-    }
-    const onHideClick = () => {
-        setinHidden((prevHide) => !prevHide)
     }
 
     return (
@@ -51,18 +47,7 @@ const ProductListItem = ({
                     <h3 className="product-title">{title}</h3>
                     <p className="product-description">{description}</p>
                     <div className="product-features">Type: {type}</div>
-                    <div>
-                        <button onClick={onHideClick}>Show description</button>
-                        {isHideden ? (
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Voluptatibus non dolorem alias
-                                porro reprehenderit, iste perspiciatis quisquam
-                                nemo facilis id fugiat vel, quaerat dicta aut,
-                                aperiam numquam ducimus at vero!
-                            </p>
-                        ) : null}
-                    </div>
+
                     <div className="product-capacity">Capacity: {capacity}</div>
                     <div className="product-price"> $ {price}</div>
                     <div className="product-quantity">
